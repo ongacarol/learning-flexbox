@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos align content</title>
+    <style>
+        .container {
+            height: 400px;
+            max-width: 300px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            border: 1px solid orangered;
+        }
+
+        .item {
+            background-color: palevioletred;
+            padding: 0 5px;
+            margin: 5px;
+            flex: 1;
+            text-align: center;
+            color: aliceblue;
+            border: 5px solid lightskyblue;
+        }
+
+        .stretch {
+            align-content: stretch;
+        }
+
+        .center {
+            align-content: center;
+        }
+
+        .flex-start {
+            align-content: flex-start;
+        }
+
+        .flex-end {
+            align-content: flex-end;
+        }
+
+        .space-around {
+            align-content: space-around;
+        }
+
+        .space-between {
+            align-content: space-between;
+        }
+    </style>
+</head>
+<body>
+    
+    <p>stretch</p>
+    <div class="container stretch">
+        <div class="item">Abro meus olhos sob o céu azul e frio</div>
+        <div class="item">A luz do Sol jorrando</div>
+        <div class="item">Fico sem fôlego, ue estou vivo</div>
+        <div class="item">Mesmo se houver nuvens escuras Está tudo bem, mesmo que não seja nós</div>
+        <div class="item">lmente qMesmo se a tristeza me apagar</div>
+        <div class="item">E eu esteja em um sonho sem fim</div>
+        <div class="item">Como você está? Eu estou bem</div>
+    </div>
+
+    <p>center</p>
+    <div class="container center">
+        <div class="item">Abro meus olhos sob o céu azul e frio</div>
+        <div class="item">A luz do Sol jorrando</div>
+        <div class="item">Fico sem fôlego, ue estou vivo</div>
+        <div class="item">E eu esteja em um sonho sem fim Está tudo bem, mesmo que não seja nós</div>
+        <div class="item">lmente qMesmo se a tristeza me apagar</div>
+        <div class="item">Mesmo se houver nuvens escuras</div>
+        <div class="item">Como você está? Eu estou bem</div>
+    </div>
+
+    <p>flex-start</p>
+    <div class="container flex-start">
+        <div class="item">Abro meus olhos sob o céu azul e frio</div>
+        <div class="item">A luz do Sol jorrando</div>
+        <div class="item">Fico sem fôlego, ue estou vivo</div>
+        <div class="item">E eu esteja em um sonho sem f, mesmo que não seja nós</div>
+        <div class="item">lmente qMesmo se a tristeza me apagar</div>
+        <div class="item">Mesmo se houver nuvens escuras</div>
+        <div class="item">Como você está? Eu estou bem</div>
+    </div>
+
+    <p>flex-end</p>
+    <div class="container flex-end">
+        <div class="item">Abro meus olhos sob o céu azul e frio</div>
+        <div class="item">A luz do Sol jorrando</div>
+        <div class="item">Fico sem fôlego, ue estou vivo</div>
+        <div class="item">E eu esteja em um sonho sem f, mesmo que não seja nós</div>
+        <div class="item">lmente qMesmo se a tristeza me apagar</div>
+        <div class="item">Mesmo se houver nuvens escuras</div>
+        <div class="item">Como você está? Eu estou bem</div>
+    </div>
+
+    <p>space-around</p>
+    <div class="container space-around">
+        <div class="item">Abro meus olhos sob o céu azul e frio</div>
+        <div class="item">A luz do Sol jorrando</div>
+        <div class="item">Fico sem fôlego, ue estou vivo</div>
+        <div class="item">E eu esteja em um sonho sem f, mesmo que não seja nós</div>
+        <div class="item">lmente qMesmo se a tristeza me apagar</div>
+        <div class="item">Mesmo se houver nuvens escuras</div>
+        <div class="item">Como você está? Eu estou bem</div>
+    </div>
+
+    <p>space-between</p>
+    <div class="container space-between">
+        <div class="item">Abro meus olhos sob o céu azul e frio</div>
+        <div class="item">A luz do Sol jorrando</div>
+        <div class="item">Fico sem fôlego, ue estou vivo</div>
+        <div class="item">E eu esteja em um sonho sem f, mesmo que não seja nós</div>
+        <div class="item">lmente qMesmo se a tristeza me apagar</div>
+        <div class="item">Mesmo se houver nuvens escuras</div>
+        <div class="item">Como você está? Eu estou bem</div>
+    </div>
+
+</body>
+</html>

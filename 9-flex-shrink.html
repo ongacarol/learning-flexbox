@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos - flex shrink</title>
+    <style>
+        .flex-container {
+            max-width: 350px;
+            border: 1px solid black;
+            display: flex;
+            margin-bottom: 10px;
+        }
+
+        .item {
+            background-color: violet;
+            font-size: 24px;
+            text-align: center;
+            margin: 5px;
+        }
+        
+        .s-1 { <! -- shrink-1 -->
+            flex-shrink: 1;
+        }
+
+        .fg-1 {
+            flex-grow: 1;
+        }
+
+        .s-0 {
+            flex-shrink: 0;
+            flex-basis: 100px; <!--diz pro item que ele precisa 
+                minimamente ter 100px de width, porem nao vou 
+                permitir a compressao dos itens, então nao vou 
+                conseguir fazer com que seja repeitado o grow em 1-->
+        }
+
+        .s-2 {
+            flex-shrink: 2;
+        <!--diz pros itens que eles podem ser comprimidos até duas vezes
+            tal qual seja possível-->
+            flex-basis: 100px;
+        <!-- faz que os itens tenham tamanho 100 porém tenta fazer com 
+            que a compressão ocorra até 2 vezes, e ainda assim tenta fazer com
+            que os itens não vazem do cntr. Ele tenta fazer o basis
+            ser respeitado. Uma vez q ele não consegue mas tem uma compressão possível
+            pros elementos, ele vai agrupá-los de modo que consiga caber dentro do
+            cntr-->    
+        }
+
+        .s-3 {
+            flex-shrink: 3;
+            flex-basis: 100px;
+        }
+    </style>
+</head>
+<body>
+    <p>flex-shrink: 1</p>
+    <div class="flex-container">
+        <div class="item s-1 fg-1">A</div>
+        <div class="item s-1 fg-1">B</div>
+        <div class="item s-1 fg-1">C</div>
+        <div class="item s-1 fg-1">D</div>
+        <div class="item s-1 fg-1">E</div>
+    </div>
+
+    <p>flex-shrink: 1</p>
+    <div class="flex-container">
+        <div class="item s-1 fg-1">A</div>
+        <div class="item s-1 fg-1">O jimin é muito fofinho e lindinho</div>
+        <div class="item s-1 fg-1">C</div>
+        <div class="item s-1 fg-1">D</div>
+        <div class="item s-1 fg-1">E</div>
+    </div>
+    
+<!--qdo a prop shrink está definida em zero, não permite a diminuicao dos itens. 
+e pra isso vai precisar de outra prop aplicada q será o flex basis-->
+    <p>flex-shrink: 0 / basis: 100px</p>
+    <div class="flex-container">
+        <div class="item s-0 fg-1">A</div>
+        <div class="item s-0 fg-1">O jimin é muito fofinho e lindinho</div>
+        <div class="item s-0 fg-1">O jimin é muito fofinho</div>
+        <div class="item s-0 fg-1">O jimin é muito fofinho</div>
+        <div class="item s-0 fg-1">E</div>
+    </div>
+
+    <p>flex-shrink: mix / basis: 100px</p>
+    <div class="flex-container">
+        <div class="item s-1 fg-1">A</div>
+        <div class="item s-2 fg-1">O jimin é muito fofinho e lindinho</div>
+        <div class="item s-2 fg-1">C</div>
+        <div class="item s-3 fg-1">D</div>
+    </div>
+</body>
+</html>
